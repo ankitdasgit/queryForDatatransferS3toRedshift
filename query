@@ -1,0 +1,4 @@
+COPY public.demousers4
+FROM 's3://datas3-to-redshift/'
+IAM_ROLE 'arn:aws:iam::556333803857:role/service-role/AmazonRedshift-CommandsAccessRole-20240227T215951'
+FORMAT AS PARQUET;
