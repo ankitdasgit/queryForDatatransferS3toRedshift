@@ -1,0 +1,14 @@
+Steps:
+1. Create a bucket on Amazon S3 and then load data in it.  
+2. Set Up IAM Roles with proper access.
+3. make redshift cluster.
+4. create an External Schema or you can you public schema in database.
+5. create an external table in external schema or a table in public schema.
+6. open query editor and connect with database, and choose database name and schema name on left hand side.
+7. use copy command for data move to s3 to redshift spectrum.
+
+8. run query:
+        COPY public.demousers4
+        FROM 's3://datas3-to-redshift/'
+        IAM_ROLE 'arn:aws:iam::556333803857:role/service-role/AmazonRedshift-CommandsAccessRole-20240227T215951'
+        FORMAT AS PARQUET;
